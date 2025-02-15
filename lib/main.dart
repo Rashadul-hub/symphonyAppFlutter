@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:symphony_app/theme/theme_helper.dart';
-
+import 'core/app_export.dart';
+import 'core/utils/navigator_service.dart';
 import 'core/utils/pref_utils.dart';
+import 'localization/app_localization.dart';
 import 'theme/provider/theme_provider.dart';
-
+import 'package:/flutter_localizations/flutter_localizations.dart';
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
