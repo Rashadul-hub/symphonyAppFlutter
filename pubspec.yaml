@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.3.0
   connectivity_plus: ^6.0.4
   responsive_grid_list: ^1.4.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -69,18 +70,18 @@ flutter:
   fonts:
    - family: Urbanist
      fonts:
-       - asset: asset/fonts/UrbanistBold.ttf
+       - asset: assets/fonts/UrbanistBold.ttf
          weight: 700
-       - asset: asset/fonts/UrbanistSemiBold.ttf
+       - asset: assets/fonts/UrbanistSemiBold.ttf
          weight: 600
-       - asset: asset/fonts/UrbanistMedium.ttf
+       - asset: assets/fonts/UrbanistMedium.ttf
          weight: 500
 
    - family: Lato
      fonts:
-       - asset: asset/fonts/Lato-Regular.ttf
+       - asset: assets/fonts/LatoRegular.ttf
          weight: 700
-       - asset: asset/fonts/Lato-Bold.ttf
+       - asset: assets/fonts/LatoBold.ttf
          weight: 400
 
   # For details regarding fonts from package dependencies,
