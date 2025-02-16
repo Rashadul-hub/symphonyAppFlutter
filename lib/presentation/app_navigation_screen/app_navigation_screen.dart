@@ -87,10 +87,10 @@ class AppNavigationScreenState
                     ),
                     child: Column(
                       children: [
-                        // _buildScreenTitle(
-                        //   context,
-                        //   screenTitle: "homeScreen",
-                        // ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "homeScreen",
+                        ),
                         // _buildScreenTitle(
                         //   context,
                         //   screenTitle: "serviceCenterScreen - BottomSheet",
