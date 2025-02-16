@@ -52,7 +52,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
     return SafeArea(
       child: Scaffold(
         // backgroundColor: Colors.red,
-        extendBody: true,
+        extendBody: false,
         extendBodyBehindAppBar: true,
         appBar: _buildAppBar(context),
         body: Container(
@@ -72,7 +72,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
           // decoration: AppDecoration.gradientGrayToGray,
           child: SafeArea(
             child: Container(
-              margin: EdgeInsets.only(top: 56.h),
+              margin: EdgeInsets.only(top: 5.h),
               padding: EdgeInsets.only(
                 left: 16.h,
                 top: 6.h,

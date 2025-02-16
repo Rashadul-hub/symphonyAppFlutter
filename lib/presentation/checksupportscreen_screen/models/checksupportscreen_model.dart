@@ -5,21 +5,21 @@ import 'supportgrid_item_model.dart';
 class ChecksupportscreenModel {
   List<SupportgridItemModel> supportgridItemList = [
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgClose, hotlineTwo: "lbl_hotline".tr),
+        containerIcon: ImageConstant.imgClose, containerTitle: "lbl_hotline".tr),
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgThumbsUp,
-        hotlineTwo: "lbl_service_center".tr),
+        containerIcon: ImageConstant.imgThumbsUp,
+        containerTitle: "lbl_service_center".tr),
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgThumbsUpErrorcontainer,
-        hotlineTwo: "lbl_lso_query".tr),
+        containerIcon: ImageConstant.imgThumbsUpErrorcontainer,
+        containerTitle: "lbl_lso_query".tr),
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgPositiveReview,
-        hotlineTwo: "lbl_feedback".tr),
+        containerIcon: ImageConstant.imgPositiveReview,
+        containerTitle: "lbl_feedback".tr),
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgClipboard1,
-        hotlineTwo: "lbl_specification".tr),
+        containerIcon: ImageConstant.imgClipboard1,
+        containerTitle: "lbl_specification".tr),
     SupportgridItemModel(
-        hotlineOne: ImageConstant.imgCalender,
-        hotlineTwo: "msg_book_an_appointment".tr)
+        containerIcon: ImageConstant.imgCalender,
+        containerTitle: "msg_book_an_appointment".tr)
   ];
 }
