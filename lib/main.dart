@@ -102,8 +102,8 @@ class MyApp extends StatelessWidget {
                 ],
                 locale: Locale('en', ''),
                 supportedLocales: [Locale('en', '')],
-                initialRoute: AppRoutes.checksupportscreenScreen,
-                // initialRoute: AppRoutes.initialRoute,
+                // initialRoute: AppRoutes.checksupportscreenScreen,
+                initialRoute: AppRoutes.initialRoute,
                 routes: AppRoutes.routes,
               );
             },

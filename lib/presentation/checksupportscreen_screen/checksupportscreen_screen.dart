@@ -101,7 +101,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
       leadingWidth: 40.h,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgArrowLeft,
-        margin: EdgeInsets.only(left: 16.h),
+        margin: EdgeInsets.only(left: 16.h,top: 16.h),
         onTap: () {
           onTapArrowleftone(context);
         },
@@ -109,7 +109,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
       title: AppBarSubtitle(
         // text: "Check Support",
         text: "lbl_check_support".tr,
-        margin: EdgeInsets.only(left: 16.h),
+        margin: EdgeInsets.only(left: 16.h,top: 16.h),
       ),
     );
   }
@@ -158,7 +158,8 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
       child: CustomBottomBar(
         onChanged: (BottomBarEnum type) {
           Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type),
+            // navigatorKey.currentContext!, getCurrentRoute(type),
+            context, getCurrentRoute(type),
           );
         },
       ),
@@ -187,8 +188,9 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
   /// Navigates to the specificationscreenScreen when the action is triggered.
   onTapOnlinesupport(BuildContext context) {
     NavigatorService.pushNamed(
+      AppRoutes.homescreenScreen,
       // AppRoutes.specificationscreenScreen,
-      AppRoutes.initialRoute,
+      // AppRoutes.initialRoute,
     );
   }
 
