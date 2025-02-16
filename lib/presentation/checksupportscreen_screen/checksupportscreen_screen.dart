@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../widgets/appbar/app_leading_image.dart';
+import '../../widgets/appbar/appbar_subtitle.dart';
+import '../../widgets/appbar/custom_app_bar.dart';
+import '../../widgets/custom_bottom_bar.dart';
 import 'models/supportgrid_item_model.dart';
 import 'provider/checksupportscreen_provider.dart';
 import 'widgets/supportgrid_item_widget.dart';
-import 'models/checksupportscreen_model.dart';
 import 'package:responsive_grid_list/responsive_grid_list.dart';
-// import '../../widgets/appbar/custom_app_bar.dart';
-// import '../../widgets/appbar/appbar_subtitle.dart';
-// import '../../widgets/appbar/appbar_leading_image.dart';
 
 
 class ChecksupportscreenScreen
@@ -32,61 +32,74 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
-    Future.delayed(const Duration(milliseconds: 3000), (){
-      NavigatorService.popAndPushNamed(
-        AppRoutes.appNavigationScreen
-      );
-    });
-    Future.delayed(const Duration(milliseconds: 3000), (){
-      NavigatorService.popAndPushNamed(
-        AppRoutes.appNavigationScreen
-      );
-    });
+    // Future.delayed(const Duration(milliseconds: 3000), (){
+    //   NavigatorService.popAndPushNamed(
+    //     AppRoutes.appNavigationScreen
+    //   );
+    // });
+    // Future.delayed(const Duration(milliseconds: 3000), (){
+    //   NavigatorService.popAndPushNamed(
+    //     AppRoutes.appNavigationScreen
+    //   );
+    // });
 
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      extendBodyBehindAppBar: true,
-      appBar: _buildAppBar(context),
-      body: Container(
-        width: double.maxFinite,
-        height: SizeUtils.height,
-        decoration: AppDecoration.gradientGrayToGray,
-        child: SafeArea(
-          child: Container(
-            margin: EdgeInsets.only(top: 56.h),
-            padding: EdgeInsets.only(
-              left: 16.h,
-              top: 6.h,
-              right: 16.h,
+    return SafeArea(
+      child: Scaffold(
+        // backgroundColor: Colors.red,
+        extendBody: true,
+        extendBodyBehindAppBar: true,
+        appBar: _buildAppBar(context),
+        body: Container(
+          width: double.maxFinite,
+          height: SizeUtils.height,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFFF1F7FF),
+                Color(0xFFF6F6F6),
+              ],
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [_buildSupportGrid(context)],
+          ),
+
+          // decoration: AppDecoration.gradientGrayToGray,
+          child: SafeArea(
+            child: Container(
+              margin: EdgeInsets.only(top: 56.h),
+              padding: EdgeInsets.only(
+                left: 16.h,
+                top: 6.h,
+                right: 16.h,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [_buildSupportGrid(context)],
+              ),
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: SizedBox(
-        width: double.maxFinite,
-        child: _buildBottomNavigation(context),
+        bottomNavigationBar: SizedBox(
+          width: double.maxFinite,
+          child: _buildBottomNavigation(context),
+        ),
       ),
     );
   }
 
 
 
-  /// Section Widget
+  /// Section AppBar Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
       leadingWidth: 40.h,
-      leading: AppBarLeadingImage(
+      leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgArrowLeft,
         margin: EdgeInsets.only(left: 16.h),
         onTap: () {
@@ -94,6 +107,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
         },
       ),
       title: AppBarSubtitle(
+        // text: "Check Support",
         text: "lbl_check_support".tr,
         margin: EdgeInsets.only(left: 16.h),
       ),
@@ -173,7 +187,8 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
   /// Navigates to the specificationscreenScreen when the action is triggered.
   onTapOnlinesupport(BuildContext context) {
     NavigatorService.pushNamed(
-      AppRoutes.specificationscreenScreen,
+      // AppRoutes.specificationscreenScreen,
+      AppRoutes.initialRoute,
     );
   }
 

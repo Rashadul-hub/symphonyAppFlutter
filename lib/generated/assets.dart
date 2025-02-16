@@ -8,10 +8,17 @@ class Assets {
   static const String fontsUrbanistMedium = 'assets/fonts/UrbanistMedium.ttf';
   static const String fontsUrbanistSemiBold = 'assets/fonts/UrbanistSemiBold.ttf';
   static const String imagesImg561710737163876Slide28png = 'assets/images/img_56_1710737163876-slide28png.png';
+  static const String imagesImgArrowLeft = 'assets/images/img_arrow_left.png';
+  static const String imagesImgCalender = 'assets/images/img_calender.svg';
+  static const String imagesImgClipboard1 = 'assets/images/img_clipboard_1.svg';
+  static const String imagesImgClose = 'assets/images/img_close.svg';
+  static const String imagesImgImage34 = 'assets/images/img_image_34.png';
   static const String imagesImgMenu = 'assets/images/img_menu.svg';
-  static const String imagesImgMenu34 = 'assets/images/img_image_34.png';
   static const String imagesImgNavHome = 'assets/images/img_nav_home.svg';
   static const String imagesImgNavSocial = 'assets/images/img_nav_social.svg';
   static const String imagesImgNavWebsite = 'assets/images/img_nav_website.svg';
+  static const String imagesImgPositiveReview = 'assets/images/img_positive_review.svg';
+  static const String imagesImgThumbsUp = 'assets/images/img_thumbs_up.svg';
+  static const String imagesImgThumbsUpErrorcontainer = 'assets/images/img_thumbs_up_errorcontainer.svg';
 
 }

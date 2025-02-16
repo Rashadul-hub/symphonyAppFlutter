@@ -6,9 +6,9 @@ const num FIGMA_DESIGN_HEIGHT = 812;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 extension ResponsiveExtension on num {
-  double get _width => SizeUtils.width;
-  double get h => ((this * _width) / FIGMA_DESIGN_WIDTH);
-  double get fSize => ((this * _width) / FIGMA_DESIGN_WIDTH);
+  double? get _width => SizeUtils.width;
+  double get h => ((this * _width!) / FIGMA_DESIGN_WIDTH);
+  double get fSize => ((this * _width!) / FIGMA_DESIGN_WIDTH);
 }
 
 extension FormatExtension on double {
@@ -44,8 +44,9 @@ class Sizer extends StatelessWidget {
     });
   }
 }
-
 class SizeUtils {
+
+
   /// Device's BoxConstraints
   static late BoxConstraints boxConstraints;
 
@@ -56,25 +57,32 @@ class SizeUtils {
   static late DeviceType deviceType;
 
   /// Device's Height
-  static late double height;
+  // static late double height;
+  static double? height;
 
   /// Device's Width
-  static late double width;
+  // static late double width;
+  static double? width;
 
   static void setScreenSize(
       BoxConstraints constraints,
       Orientation currentOrientation,
       ) {
+    // if (height == null) {
+    //   height = constraints.maxHeight; // or whatever logic you need
+    // }
     boxConstraints = constraints;
     orientation = currentOrientation;
     if (orientation == Orientation.portrait) {
       width =
           boxConstraints.maxWidth.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
       height = boxConstraints.maxHeight.isNonZero();
+      // height = boxConstraints.maxHeight.isNonZero(defaultValue: FIGMA_DESIGN_HEIGHT);
     } else {
       width =
           boxConstraints.maxHeight.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
       height = boxConstraints.maxWidth.isNonZero();
+      // height = boxConstraints.maxWidth.isNonZero(defaultValue: FIGMA_DESIGN_HEIGHT);
     }
     deviceType = DeviceType.mobile;
   }
