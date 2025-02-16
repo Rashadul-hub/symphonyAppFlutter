@@ -16,12 +16,14 @@ class SupportgridItemWidget extends StatelessWidget {
         onTapOnlinesupport?.call();
       },
       child: Container(
-        width: double.maxFinite,
-        padding: EdgeInsets.only(
-          left: 14.h,
-          top: 14.h,
-          bottom: 14.h,
-        ),
+        // width: double.maxFinite,
+        // padding: EdgeInsets.only(
+        //   left: 14.h,
+        //   top: 14.h,
+        //   bottom: 14.h,
+        // ),
+        padding: EdgeInsets.symmetric(horizontal: 14.h, vertical: 14.h),
+
         decoration: AppDecoration.outlineIndigoA.copyWith(
           borderRadius: BorderRadiusStyle.roundedBorder16,
         ),
@@ -30,15 +32,20 @@ class SupportgridItemWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomImageView(
-              imagePath: supportgridItemModelObj.hotlineOne!,
+              imagePath: supportgridItemModelObj.containerIcon!,
               height: 32.h,
               width: 32.h,
             ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 30.h),
+            // SizedBox(height: 8.h), // Reduced spacing between icon and text
+
             Text(
-              supportgridItemModelObj.hotlineTwo!,
+              supportgridItemModelObj.containerTitle!,
               style: theme.textTheme.titleMedium,
-            )
+            ),
+            // SizedBox(height: 10.h),
+            // SizedBox(height: 8.h), // Reduced spacing between icon and text
+
           ],
         ),
       ),
