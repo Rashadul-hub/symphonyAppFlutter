@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../presentation/app_navigation_screen/app_navigation_screen.dart';
+import '../presentation/checksupportscreen_screen/checksupportscreen_screen.dart';
 
 class AppRoutes {
   static const String homescreenScreen = '/home_screen';
@@ -17,6 +18,6 @@ class AppRoutes {
     // specificationscreenScreen: SpecificationscreenScreen.builder,
     // queryscreenScreen: QueryscreenScreen.builder,
     appNavigationScreen: AppNavigationScreen.builder,
-    // initialRoute: ChecksupportscreenScreen.builder
+    initialRoute: ChecksupportscreenScreen.builder
   };
 }
