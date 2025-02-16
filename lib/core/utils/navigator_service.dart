@@ -4,8 +4,9 @@ class NavigatorService {
 
   static Future<dynamic> pushNamed(
       String routeName,
-      dynamic arguments,
-      ) async {
+      {
+    dynamic arguments,
+  }) async {
     return navigatorKey.currentState
         ?.pushNamed(routeName, arguments: arguments);
   }

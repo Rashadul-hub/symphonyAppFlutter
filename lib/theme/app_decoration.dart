@@ -17,7 +17,7 @@ class AppDecoration {
     color: appTheme.red500,
     image: DecorationImage(
       image: AssetImage(
-        ImageConstant.img561710737163876Slide28png,
+        ImageConstant.imgNavHome,//imgPattern
       ),
       fit: BoxFit.fill,
     ),

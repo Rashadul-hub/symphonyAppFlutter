@@ -8,7 +8,6 @@ ThemeData get theme => ThemeHelper().themeData();
 
 /// Helper class for managing themes and colors.
 
-// ignore_for_file: must_be_immutable
 class ThemeHelper {
   // The current app theme
   var _appTheme = PrefUtils().getThemeData();
@@ -46,7 +45,7 @@ class ThemeHelper {
           backgroundColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-                8.h),
+                8),
           ),
 
           elevation: 0,
@@ -63,11 +62,11 @@ class ThemeHelper {
           side: BorderSide(
             color: appTheme.black900.withOpacity(
                 0.2),
-            width: 1.h,
+            width: 1,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-                8.h),
+                8),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -90,7 +89,10 @@ class ThemeHelper {
 
   /// Returns the current theme data.
   ThemeData themeData() => _getThemeData();
+
 }
+
+
 /// Class containing the supported text theme styles.
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
