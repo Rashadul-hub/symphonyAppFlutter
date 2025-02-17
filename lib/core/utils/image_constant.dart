@@ -14,12 +14,19 @@ class ImageConstant{
   static String imgClipboard1  = '$imagePath/img_clipboard_1.svg';
 
 
-
-   // img_thumbs_up.svg
-  // img_thumbs_up_errorcontainer.svg
   static String imgPositiveReview  = '$imagePath/img_positive_review.svg';
   static String imgThumbsUp  = '$imagePath/img_thumbs_up.svg';
   static String imgThumbsUpErrorcontainer  = '$imagePath/img_thumbs_up_errorcontainer.svg';
+
+
+
+  static String imgVector  = '$imagePath/img_vector.svg';
+  static String imgRightArrow  = '$imagePath/img_right_arrow_png.png';
+  static String imgEntertainment  = '$imagePath/entertainment.png';
+  static String social  = '$imagePath/join_social.png';
+  static String games3  = '$imagePath/games_3.png';
+  static String games2  = '$imagePath/games_2.png';
+  static String games1  = '$imagePath/games_1.png';
 
 
 

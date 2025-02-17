@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:symphony_app/presentation/homescreen_screen/dashboard_page.dart';
 
 import '../presentation/app_navigation_screen/app_navigation_screen.dart';
 import '../presentation/checksupportscreen_screen/checksupportscreen_screen.dart';
@@ -9,7 +10,7 @@ import '../presentation/homescreen_screen/homescreen_screen.dart';
 
 class AppRoutes {
   static const String homescreenScreen = '/homescreen_screen';
-  static const String iphone13MiniFourInitialPage = '/iphone_13_mini_four_initial_page';
+  static const String dashBoardPage = '/dashboard_page';
   static const String checksupportsScreen = '/checksupportscreen_screen';
   static const String specificationscreenScreen = '/specificationscreen_screen';
   static const String queryscreenScreen = '/queryscreen_screen';
@@ -19,6 +20,8 @@ class AppRoutes {
   static Map<String, WidgetBuilder> get routes => {
     homescreenScreen: HomescreenScreen.builder,
     checksupportsScreen: ChecksupportscreenScreen.builder,
+    dashBoardPage: DashBoardPage.builder,
+
     // specificationscreenScreen: SpecificationscreenScreen.builder,
     // queryscreenScreen: QueryscreenScreen.builder,
     appNavigationScreen: AppNavigationScreen.builder,

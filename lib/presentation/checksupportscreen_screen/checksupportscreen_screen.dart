@@ -34,16 +34,6 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
   void initState() {
     super.initState();
 
-    // Future.delayed(const Duration(milliseconds: 3000), (){
-    //   NavigatorService.popAndPushNamed(
-    //     AppRoutes.appNavigationScreen
-    //   );
-    // });
-    // Future.delayed(const Duration(milliseconds: 3000), (){
-    //   NavigatorService.popAndPushNamed(
-    //     AppRoutes.appNavigationScreen
-    //   );
-    // });
 
   }
 
@@ -172,7 +162,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
       case BottomBarEnum.Website:
         return "/";
       case BottomBarEnum.Home:
-        return AppRoutes.iphone13MiniFourInitialPage;
+        return AppRoutes.homescreenScreen;
       case BottomBarEnum.Social:
         return "/";
       default:
@@ -191,6 +181,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
       AppRoutes.homescreenScreen,
       // AppRoutes.specificationscreenScreen,
       // AppRoutes.initialRoute,
+      // getCurrentRoute(type),
     );
   }
 

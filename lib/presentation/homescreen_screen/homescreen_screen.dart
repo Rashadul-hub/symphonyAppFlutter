@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/app_export.dart';
 import '../../widgets/custom_bottom_bar.dart';
-import 'iphone_13_mini_four_initial_page.dart';
+import 'dashboard_page.dart';
 import 'provider/homescreen_provider.dart';
 
 class HomescreenScreen extends StatefulWidget {
@@ -35,12 +35,13 @@ class _HomescreenScreenState extends State<HomescreenScreen> {
      body: Container(
        width: double.maxFinite,
        height: SizeUtils.height,
-       decoration: AppDecoration.gradientGrayToGray,
+     decoration: AppDecoration.gradientGrayToGray,
        child: SafeArea(
          child: Navigator(
            key: navigatorKey,
-           initialRoute: AppRoutes.iphone13MiniFourInitialPage,
+           initialRoute: AppRoutes.dashBoardPage,
            onGenerateRoute: (routeSetting) => PageRouteBuilder(
+             settings: routeSetting,
              pageBuilder: (ctx, ani, ani1) =>
                  getCurrentPage(context, routeSetting.name!),
              transitionDuration: Duration(seconds: 0),
@@ -61,8 +62,32 @@ class _HomescreenScreenState extends State<HomescreenScreen> {
      width: double.maxFinite,
      child: CustomBottomBar(
        onChanged: (BottomBarEnum type) {
-         Navigator.pushNamed(
-             navigatorKey.currentContext!, getCurrentRoute(type));
+         Navigator.pushReplacementNamed(
+             navigatorKey.currentContext!, getCurrentRoute(type)
+           // context, getCurrentRoute(type),
+
+         );
+         // if (type == BottomBarEnum.Home) {
+         //   WidgetsBinding.instance.addPostFrameCallback((_) {
+         //     navigatorKey.currentState?.popUntil(
+         //             (route) => route.settings.name == AppRoutes.dashBoardPage);
+         //     if (ModalRoute.of(navigatorKey.currentContext!)?.settings.name !=
+         //         AppRoutes.dashBoardPage) {
+         //       Navigator.pushReplacementNamed(
+         //         navigatorKey.currentContext!,
+         //         AppRoutes.dashBoardPage,
+         //       );
+         //     }
+         //   });
+         // } else {
+         //   WidgetsBinding.instance.addPostFrameCallback((_) {
+         //     Navigator.pushReplacementNamed(
+         //       navigatorKey.currentContext!,
+         //       getCurrentRoute(type),
+         //     );
+         //   });
+         // }
+
        },
      ),
    );
@@ -75,7 +100,7 @@ class _HomescreenScreenState extends State<HomescreenScreen> {
      case BottomBarEnum.Website:
        return "/";
      case BottomBarEnum.Home:
-       return AppRoutes.iphone13MiniFourInitialPage;
+       return AppRoutes.homescreenScreen;
      case BottomBarEnum.Social:
        return "/";
      default:
@@ -89,8 +114,11 @@ class _HomescreenScreenState extends State<HomescreenScreen> {
      String currentRoute,
      ) {
    switch (currentRoute) {
-     case AppRoutes.iphone13MiniFourInitialPage:
-       return Iphone13MiniFourInitialPage.builder(context);
+     case AppRoutes.dashBoardPage:
+       return DashBoardPage.builder(context);
+
+     case AppRoutes.homescreenScreen:
+       return HomescreenScreen.builder(context);
      default:
        return DefaultWidget();
    }

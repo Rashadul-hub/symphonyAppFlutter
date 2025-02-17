@@ -32,10 +32,18 @@ class AppDecoration {
     ),
   );
   static BoxDecoration get gradientGrayToGray => BoxDecoration(
+    // gradient: LinearGradient(
+    //   begin: Alignment(0.5, 0),
+    //   end: Alignment(0.5, 1),
+    //   colors: [appTheme.gray100, appTheme.gray1001],
+    // ),
     gradient: LinearGradient(
-      begin: Alignment(0.5, 0),
-      end: Alignment(0.5, 1),
-      colors: [appTheme.gray100, appTheme.gray1001],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Color(0xFFF1F7FF),
+        Color(0xFFF6F6F6),
+      ],
     ),
   );
 

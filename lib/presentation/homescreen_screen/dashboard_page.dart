@@ -12,37 +12,59 @@ import 'widgets/list_item_widget.dart';
 import 'widgets/listmobiles_item_widget.dart';
 
 
-class Iphone13MiniFourInitialPage extends StatefulWidget {
+class DashBoardPage extends StatefulWidget {
 
-  const Iphone13MiniFourInitialPage({super.key});
+  const DashBoardPage({super.key});
 
   @override
-  State<Iphone13MiniFourInitialPage> createState() => _Iphone13MiniFourInitialPageState();
+  State<DashBoardPage> createState() => _DashBoardPageState();
   static Widget builder(BuildContext context){
     return ChangeNotifierProvider(
       create: (context) => HomescreenProvider(),
-      child: Iphone13MiniFourInitialPage(),
+      child: DashBoardPage(),
     );
   }
 
 }
 
-class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPage> {
+class _DashBoardPageState extends State<DashBoardPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool _isDrawerOpen = false;
+  void _toggleDrawer() {
+    if (mounted) {
+      setState(() {
+        _isDrawerOpen = !_isDrawerOpen;
+        print("Drawer is now: ${_isDrawerOpen ? 'Open' : 'Closed'}");
+      });
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      decoration: AppDecoration.gradientGrayToGray,
-      child: Column(
-        children: [
-          SizedBox(
-            width: double.maxFinite,
+    return Stack(
+      children: [
+        Scaffold(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(52.h),
             child: _buildAppBar(context),
           ),
-          Expanded(
+
+          body: Container(
+            width: double.maxFinite,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFF1F7FF),
+                  Color(0xFFF6F6F6),
+                ],
+              ),
+            ),
             child: SingleChildScrollView(
-              child: Container(
-                width: double.maxFinite,
+              child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14),
                 child: Column(
                   children: [
@@ -65,10 +87,82 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
               ),
             ),
           ),
-        ],
-      ),
+        ),
+
+        // Right Drawer Navigation
+        if (_isDrawerOpen) GestureDetector(
+          onTap: _toggleDrawer, // Close drawer on tap outside
+          child: Container(
+            color: Colors.black.withOpacity(0.5), // Dim background
+            width: 90,
+            height: 90,
+          ),
+        ),
+
+        AnimatedPositioned(
+          duration: Duration(milliseconds: 300),
+          right: _isDrawerOpen ? 0 : -MediaQuery.of(context).size.width ,
+          top: 0,
+          bottom: 0,
+          curve: Curves.easeInOut,
+          child: _buildRightDrawer(context),
+        ),
+      ],
     );
   }
+
+  //
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     width: double.maxFinite,
+  //     // decoration: AppDecoration.gradientGrayToGray,
+  //     decoration: const BoxDecoration(
+  //       gradient: LinearGradient(
+  //         begin: Alignment.topCenter,
+  //         end: Alignment.bottomCenter,
+  //         colors: [
+  //           Color(0xFFF1F7FF),
+  //           Color(0xFFF6F6F6),
+  //         ],
+  //       ),
+  //     ),
+  //     child: Column(
+  //       children: [
+  //         SizedBox(
+  //           width: double.maxFinite,
+  //           child: _buildAppBar(context),
+  //         ),
+  //         Expanded(
+  //           child: SingleChildScrollView(
+  //             child: Container(
+  //               width: double.maxFinite,
+  //               padding: EdgeInsets.symmetric(horizontal: 14),
+  //               child: Column(
+  //                 children: [
+  //                   _buildImageSection(context),
+  //                   SizedBox(height: 24.h),
+  //                   _buildHelpSection(context),
+  //                   SizedBox(height: 18.h),
+  //                   _buildTrendingItemsSection(context),
+  //                   SizedBox(height: 18.h),
+  //                   _buildEntertainmentSection(context),
+  //                   SizedBox(height: 50.h),
+  //                   _buildOnlineSupportSection(context),
+  //                   SizedBox(height: 18.h),
+  //                   _buildGamesSection(context),
+  //                   SizedBox(height: 24.h),
+  //                   _buildSocialCommunitySection(context),
+  //                   SizedBox(height: 36.h),
+  //                 ],
+  //               ),
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
 
 
@@ -82,9 +176,15 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
         margin: EdgeInsets.only(left: 16.h),
       ),
       actions: [
-        AppbarTrailingImage(
-          imagePath: ImageConstant.imgMenu,
-          margin: EdgeInsets.only(right: 14.h),
+        GestureDetector(
+          onTap: () {
+            print("Menu button tapped");
+            _toggleDrawer();
+          },
+          child: AppbarTrailingImage(
+            imagePath: ImageConstant.imgMenu,
+            margin: EdgeInsets.only(right: 14.h),
+          ),
         )
       ],
     );
@@ -132,12 +232,17 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
                 ),
                 decoration: AppDecoration.gradientRedCcToRed.copyWith(
                   borderRadius: BorderRadiusStyle.roundedBorder16,
+                  // image: DecorationImage(
+                  //   image: AssetImage(ImageConstant.imgImage34), // Your background image asset
+                  //   fit: BoxFit.cover,
+                  // ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomImageView(
-                      imagePath: ImageConstant.imgMenu,
+                      color: Colors.white,
+                      imagePath: ImageConstant.imgVector,
                       height: 40.h,
                       width: 36.h,
                     ),
@@ -170,8 +275,6 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
       ),
     );
   }
-
-
 
   /// Section Widget
   Widget _buildTrendingItemsSection(BuildContext context) {
@@ -225,7 +328,7 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
           Text("lbl_entertainment".tr, style: CustomTextStyles.titleMediumBlack900,),
           SizedBox(height: 8.h,),
           CustomImageView(
-            imagePath: ImageConstant.imgMenu,
+            imagePath: ImageConstant.imgEntertainment,
             height: 128.h,
             width: double.maxFinite,
             radius: BorderRadius.circular(16.h),
@@ -295,7 +398,7 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
           ),
           SizedBox(width: 16.h),
           CustomImageView(
-            imagePath: ImageConstant.imgArrowLeft,
+            imagePath: ImageConstant.imgRightArrow,
             height: 14.h,
             width: 14.h,
           ),
@@ -324,7 +427,7 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
                   style: CustomTextStyles.titleSmallLatoPrimary,
                 ),
                 CustomImageView(
-                  imagePath: ImageConstant.imgArrowLeft,
+                  imagePath: ImageConstant.imgRightArrow,
                   height: 14.h,
                   width: 16.h,
                   margin: EdgeInsets.only(left: 6.h),
@@ -368,13 +471,13 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
         alignment: Alignment.center,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.imgNavSocial,
+            imagePath: ImageConstant.imgMenu,
             height: 128.h,
             width: double.maxFinite,
             radius: BorderRadius.circular(16.h),
           ),
           Text(
-            "meg_join_social_community".tr,
+            "Join Social Community",
             style: CustomTextStyles.titleLargeOnPrimary,
           )
         ],
@@ -389,7 +492,60 @@ class _Iphone13MiniFourInitialPageState extends State<Iphone13MiniFourInitialPag
   }
 
 
-
+  Widget _buildRightDrawer(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.6, // 60% of screen width
+      height: MediaQuery.of(context).size.height * 0.6, // 60% of screen width
+      // height: double.infinity,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10,
+            spreadRadius: 2,
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ListTile(
+            title: Text("Check Support"),
+            onTap: () {
+              _toggleDrawer();
+              NavigatorService.pushNamed(AppRoutes.checksupportsScreen);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("Specification"),
+            onTap: () {
+              _toggleDrawer();
+              NavigatorService.pushNamed(AppRoutes.checksupportsScreen);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("Service Center"),
+            onTap: () {
+              _toggleDrawer();
+              NavigatorService.pushNamed(AppRoutes.checksupportsScreen);
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text("LOS Query"),
+            onTap: () {
+              _toggleDrawer();
+              NavigatorService.pushNamed(AppRoutes.checksupportsScreen);
+            },
+          ),
+        ],
+      ),
+    );
+  }
 
 }
 
