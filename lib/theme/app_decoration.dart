@@ -32,19 +32,37 @@ class AppDecoration {
     ),
   );
   static BoxDecoration get gradientGrayToGray => BoxDecoration(
+    // gradient: LinearGradient(
+    //   begin: Alignment(0.5, 0),
+    //   end: Alignment(0.5, 1),
+    //   colors: [appTheme.gray100, appTheme.gray1001],
+    // ),
     gradient: LinearGradient(
-      begin: Alignment(0.5, 0),
-      end: Alignment(0.5, 1),
-      colors: [appTheme.gray100, appTheme.gray1001],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Color(0xFFF1F7FF),
+        Color(0xFFF6F6F6),
+      ],
     ),
   );
 
   static BoxDecoration get gradientRedCcToRed => BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment(0.01, 0.48),
-      end: Alignment(0.99, 0.5),
-      colors: [appTheme.red700, appTheme.red70000],
+    gradient: const LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+        Color(0xCCE22727),
+        Color(0xCCE22727),
+      ],
+
     ),
+
+    // gradient: LinearGradient(
+    //   begin: Alignment(0.01, 0.48),
+    //   end: Alignment(0.99, 0.5),
+    //   colors: [appTheme.red700, appTheme.red70000],
+    // ),
   );
 // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(
