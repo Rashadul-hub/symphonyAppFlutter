@@ -7,6 +7,7 @@ class Assets {
   static const String fontsUrbanistBold = 'assets/fonts/UrbanistBold.ttf';
   static const String fontsUrbanistMedium = 'assets/fonts/UrbanistMedium.ttf';
   static const String fontsUrbanistSemiBold = 'assets/fonts/UrbanistSemiBold.ttf';
+  static const String imagesCabel = 'assets/images/cabel.png';
   static const String imagesEntertainment = 'assets/images/entertainment.png';
   static const String imagesGames1 = 'assets/images/games_1.png';
   static const String imagesGames2 = 'assets/images/games_2.png';
@@ -27,5 +28,7 @@ class Assets {
   static const String imagesImgThumbsUpErrorcontainer = 'assets/images/img_thumbs_up_errorcontainer.svg';
   static const String imagesImgVector = 'assets/images/img_vector.svg';
   static const String imagesJoinSocial = 'assets/images/join_social.png';
+  static const String imagesPattern = 'assets/images/pattern.png';
+  static const String imagesWatch = 'assets/images/watch.png';
 
 }

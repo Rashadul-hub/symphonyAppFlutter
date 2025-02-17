@@ -27,6 +27,9 @@ class ImageConstant{
   static String games3  = '$imagePath/games_3.png';
   static String games2  = '$imagePath/games_2.png';
   static String games1  = '$imagePath/games_1.png';
+  static String imgCebel  = '$imagePath/cabel.png';
+  static String imgWatch  = '$imagePath/watch.png';
+  static String pattern  = '$imagePath/pattern.png';
 
 
 

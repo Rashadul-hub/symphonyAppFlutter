@@ -11,23 +11,25 @@ class Iphone13MiniFourInitialModel{
     ),
     ListmobilesItemModel(
       mobiles: "lbl_watches".tr,
-      mobilesTwo: ImageConstant.imgImage34
+      mobilesTwo: ImageConstant.imgWatch
     ),
     ListmobilesItemModel(
         mobiles: "lbl_accessories".tr,
-        mobilesTwo: ImageConstant.imgImage34
-    ), ListmobilesItemModel(
+        mobilesTwo: ImageConstant.imgCebel
+    ),
+      ListmobilesItemModel(
       mobiles: "lbl_mobiles".tr,
       mobilesTwo: ImageConstant.img561710737163876Slide28png
     ),
     ListmobilesItemModel(
       mobiles: "lbl_watches".tr,
-      mobilesTwo: ImageConstant.imgImage34
+      mobilesTwo: ImageConstant.imgWatch
     ),
     ListmobilesItemModel(
         mobiles: "lbl_accessories".tr,
-        mobilesTwo: ImageConstant.imgImage34
+        mobilesTwo: ImageConstant.imgCebel
     ),
+
 
   ];
 

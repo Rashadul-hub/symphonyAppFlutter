@@ -75,7 +75,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     _buildTrendingItemsSection(context),
                     SizedBox(height: 18.h),
                     _buildEntertainmentSection(context),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 18.h),
                     _buildOnlineSupportSection(context),
                     SizedBox(height: 18.h),
                     _buildGamesSection(context),
@@ -232,10 +232,10 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
                 decoration: AppDecoration.gradientRedCcToRed.copyWith(
                   borderRadius: BorderRadiusStyle.roundedBorder16,
-                  // image: DecorationImage(
-                  //   image: AssetImage(ImageConstant.imgImage34), // Your background image asset
-                  //   fit: BoxFit.cover,
-                  // ),
+                  image: DecorationImage(
+                    image: AssetImage(ImageConstant.pattern), // Your background image asset
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -369,7 +369,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
                 SizedBox(height: 22.h),
                 Text(
-                  "lbl_helo".tr,
+                  "lbl_helio".tr,
                   style: theme.textTheme.labelSmall,
                 ),
                 SizedBox(height: 26.h),
@@ -382,7 +382,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "lbl_helo_50".tr,
+                  "lbl_helio_50".tr,
                   style: CustomTextStyles.titleMediumLatoOnPrimary,
                 ),
                 Text(
@@ -471,7 +471,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
         alignment: Alignment.center,
         children: [
           CustomImageView(
-            imagePath: ImageConstant.imgMenu,
+            imagePath: ImageConstant.social,
             height: 128.h,
             width: double.maxFinite,
             radius: BorderRadius.circular(16.h),

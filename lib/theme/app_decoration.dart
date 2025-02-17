@@ -48,11 +48,21 @@ class AppDecoration {
   );
 
   static BoxDecoration get gradientRedCcToRed => BoxDecoration(
-    gradient: LinearGradient(
-      begin: Alignment(0.01, 0.48),
-      end: Alignment(0.99, 0.5),
-      colors: [appTheme.red700, appTheme.red70000],
+    gradient: const LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+        Color(0xCCE22727),
+        Color(0xCCE22727),
+      ],
+
     ),
+
+    // gradient: LinearGradient(
+    //   begin: Alignment(0.01, 0.48),
+    //   end: Alignment(0.99, 0.5),
+    //   colors: [appTheme.red700, appTheme.red70000],
+    // ),
   );
 // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(

@@ -13,7 +13,8 @@ class ListmobilesItemWidget extends StatelessWidget {
       width: 102.h,
       padding: EdgeInsets.symmetric(horizontal: 10.h),
       decoration: AppDecoration.outlineBlack.copyWith(
-        borderRadius: BorderRadiusStyle.roundedBorder10,
+         border: Border.all(color: Colors.black, width: .01),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
