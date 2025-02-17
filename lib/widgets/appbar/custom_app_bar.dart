@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../core/app_export.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -30,7 +31,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       shape: shape,
       toolbarHeight: height ?? 56.h,
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFF1F7FF),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        systemNavigationBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+
       leadingWidth: leadingWidth ?? 0,
       leading: leading,
       title: title,

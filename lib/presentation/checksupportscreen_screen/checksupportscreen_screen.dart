@@ -33,8 +33,6 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
   @override
   void initState() {
     super.initState();
-
-
   }
 
   @override
@@ -58,7 +56,6 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
               ],
             ),
           ),
-
           // decoration: AppDecoration.gradientGrayToGray,
           child: SafeArea(
             child: Container(
@@ -88,6 +85,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
   /// Section AppBar Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
+
       leadingWidth: 40.h,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgArrowLeft,
@@ -118,7 +116,7 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
             builder: (context, items) => ListView(
               shrinkWrap: true,
               padding: EdgeInsets.zero,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               children: items,
             ),
             gridItems: List.generate(
@@ -129,7 +127,12 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
                 return SupportgridItemWidget(
                   model,
                   onTapOnlinesupport: () {
-                    onTapOnlinesupport(context);
+
+                    if(model.containerTitle == "lbl_lso_query".tr){
+                      NavigatorService.pushNamed(AppRoutes.queryscreenScreen);
+                    }else{
+                       onTapOnlinesupport(context);
+                    }
                   },
                 );
               },
