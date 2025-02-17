@@ -5,6 +5,7 @@ import '../presentation/app_navigation_screen/app_navigation_screen.dart';
 import '../presentation/checksupportscreen_screen/checksupportscreen_screen.dart';
 import '../presentation/homescreen_screen/homescreen_screen.dart';
 import '../presentation/queryscreen_screen/queryscreen_screen.dart';
+import '../presentation/specificationscreen_screen/specificationscreen_screen.dart';
 
 
 
@@ -22,7 +23,7 @@ class AppRoutes {
     homescreenScreen: HomescreenScreen.builder,
     checksupportsScreen: ChecksupportscreenScreen.builder,
     dashBoardPage: DashBoardPage.builder,
-    // specificationscreenScreen: SpecificationscreenScreen.builder,
+    specificationscreenScreen: SpecificationscreenScreen.builder,
     queryscreenScreen: QueryscreenScreen.builder,
     appNavigationScreen: AppNavigationScreen.builder,
     initialRoute: HomescreenScreen.builder,

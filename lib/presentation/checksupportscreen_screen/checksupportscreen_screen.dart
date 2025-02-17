@@ -130,6 +130,8 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
 
                     if(model.containerTitle == "lbl_lso_query".tr){
                       NavigatorService.pushNamed(AppRoutes.queryscreenScreen);
+                    }else if(model.containerTitle == "lbl_specification".tr){
+                      NavigatorService.pushNamed(AppRoutes.specificationscreenScreen);
                     }else{
                        onTapOnlinesupport(context);
                     }
