@@ -10,7 +10,7 @@ class RamlistitemModel{
     this.id,
 }){
     image = image ?? ImageConstant.imgThumbsUp;
-    ram = ram ?? "lbl_ram".tr;
+    ram = ram ?? "".tr;
     ramTwo = ramTwo ?? ImageConstant.imgRightArrow;
     filesize = filesize ?? "msg_16gb_8gb_expandable".tr;
     id = id ?? "";

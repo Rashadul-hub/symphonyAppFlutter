@@ -19,7 +19,8 @@ class ProcessorListItemWidget extends StatelessWidget {
         horizontal: 16.h,
         vertical: 18.h,
       ),
-      decoration: AppDecoration.fillGray.copyWith(
+      decoration:BoxDecoration(
+        color: Colors.black26,
         borderRadius: BorderRadiusStyle.roundedBorder16,
       ),
       child: Column(
@@ -36,7 +37,9 @@ class ProcessorListItemWidget extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             processorListItemModelObj.processorTwo!,
-            style: theme.textTheme.labelLarge,
+            style: theme.textTheme.labelLarge!.copyWith(
+              color: Colors.black
+            ),
           ),
           SizedBox(height: 2.h),
           Text(
@@ -45,6 +48,7 @@ class ProcessorListItemWidget extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: theme.textTheme.titleSmall!.copyWith(
               height: 1.40,
+              color: Colors.black
             ),
           ),
         ],

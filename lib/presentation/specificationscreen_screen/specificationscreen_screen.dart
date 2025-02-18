@@ -135,7 +135,8 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
  Widget _buildOnlineSupportRow(BuildContext context) {
    return Container(
      padding: EdgeInsets.symmetric(horizontal: 14.h),
-     decoration: AppDecoration.fillGray.copyWith(
+     decoration:BoxDecoration(
+       color: Colors.black26,
        borderRadius: BorderRadiusStyle.roundedBorder16,
      ),
      width: double.maxFinite,
@@ -147,30 +148,23 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
              children: [
                Text(
                  "lbl_powered_by".tr,
-                 style: CustomTextStyles.labelLargeOnPrimary,
+                 style: CustomTextStyles.labelLargeOnPrimary!.copyWith(
+                   color: Colors.black
+                 ),
                ),
                SizedBox(
                  width: double.maxFinite,
                  child: Row(
                    children: [
-                     Text(
-                       "lbl_android".tr,
-                       style: theme.textTheme.titleLarge,
-                     ),
+
                      CustomImageView(
-                       imagePath: ImageConstant.imgThumbsUp,
-                       height: 14.h,
-                       width: 14.h,
+                       imagePath: ImageConstant.imgAndroid14,
+                       height: 13.h,
+                       width: 95.h,
                        alignment: Alignment.topCenter,
                        margin: EdgeInsets.only(top: 2.h),
                      ),
-                     Padding(
-                       padding: EdgeInsets.only(left: 8.h),
-                       child: Text(
-                         "lbl_14".tr,
-                         style: theme.textTheme.titleLarge,
-                       ),
-                     ),
+
                    ],
                  ),
                ),
@@ -178,7 +172,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
            ),
          ),
          CustomImageView(
-           imagePath: ImageConstant.imgNavHome,
+           imagePath: ImageConstant.imgAndroid,
            height: 46.h,
            width: 80.h,
            alignment: Alignment.bottomCenter,
@@ -223,7 +217,8 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
        top: 18.h,
        bottom: 18.h,
      ),
-     decoration: AppDecoration.fillGray.copyWith(
+     decoration:BoxDecoration(
+       color: Colors.black26,
        borderRadius: BorderRadiusStyle.roundedBorder16,
      ),
      child: Column(
@@ -232,14 +227,16 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
        children: [
          SizedBox(height: 4.h),
          CustomImageView(
-           imagePath: ImageConstant.imgThumbsUp,
+           imagePath: ImageConstant.imgDisplay,
            height: 32.h,
            width: 34.h,
          ),
          SizedBox(height: 12.h),
          Text(
            "lbl_display".tr,
-           style: theme.textTheme.labelLarge,
+           style: theme.textTheme.labelLarge!.copyWith(
+             color: Colors.black
+           ),
          ),
          SizedBox(height: 2.h),
          Text(
@@ -248,6 +245,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
            overflow: TextOverflow.ellipsis,
            style: theme.textTheme.titleSmall!.copyWith(
              height: 1.40,
+             color: Colors.black
            ),
          ),
        ],
@@ -287,7 +285,9 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
    return Container(
      width: double.maxFinite,
      padding: EdgeInsets.all(16.h),
-     decoration: AppDecoration.fillGray.copyWith(
+
+     decoration:BoxDecoration(
+       color: Colors.black26,
        borderRadius: BorderRadiusStyle.roundedBorder16,
      ),
      child: Column(
@@ -296,14 +296,16 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
        children: [
          SizedBox(height: 6.h),
          CustomImageView(
-           imagePath: ImageConstant.imgMenu,
+           imagePath: ImageConstant.imgCamera,
            height: 32.h,
            width: 34.h,
          ),
          SizedBox(height: 10.h),
          Text(
            "lbl_camera".tr,
-           style: theme.textTheme.labelLarge,
+           style: theme.textTheme.labelLarge!.copyWith(
+             color: Colors.black
+           ),
          ),
          SizedBox(height: 2.h),
          Text(
@@ -312,6 +314,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
            overflow: TextOverflow.ellipsis,
            style: theme.textTheme.titleSmall!.copyWith(
              height: 1.40,
+             color: Colors.black
            ),
          ),
        ],
@@ -333,7 +336,8 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
                top: 18.h,
                bottom: 18.h,
              ),
-             decoration: AppDecoration.fillGray.copyWith(
+             decoration:BoxDecoration(
+               color: Colors.black26,
                borderRadius: BorderRadiusStyle.roundedBorder16,
              ),
              child: Column(
@@ -343,19 +347,19 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
                children: [
                  SizedBox(height: 4.h),
                  CustomImageView(
-                   imagePath: ImageConstant.imgMenu,
+                   imagePath: ImageConstant.imgNetwork,
                    height: 32.h,
                    width: 34.h,
                  ),
                  SizedBox(height: 10.h),
                  Text(
                    "lbl_network".tr,
-                   style: theme.textTheme.labelLarge,
+                   style: theme.textTheme.labelLarge!.copyWith(color: Colors.black),
                  ),
                  SizedBox(height: 2.h),
                  Text(
                    "lbl_4g_3g_2g".tr,
-                   style: theme.textTheme.titleSmall,
+                   style: theme.textTheme.titleSmall!.copyWith(color: Colors.black),
                  ),
                ],
              ),
@@ -370,7 +374,8 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
                top: 18.h,
                bottom: 18.h,
              ),
-             decoration: AppDecoration.fillGray.copyWith(
+             decoration:BoxDecoration(
+               color: Colors.black26,
                borderRadius: BorderRadiusStyle.roundedBorder16,
              ),
              child: Column(
@@ -380,18 +385,18 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
                children: [
                  SizedBox(height: 4.h),
                  CustomImageView(
-                   imagePath: ImageConstant.imgArrowLeft,
+                   imagePath: ImageConstant.imgBattery,
                    height: 32.h,
                    width: 34.h,
                  ),
                  SizedBox(height: 12.h),
                  Text(
                    "lbl_battery".tr,
-                   style: theme.textTheme.labelLarge,
+                   style: theme.textTheme.labelLarge!.copyWith(color: Colors.black),
                  ),
                  Text(
                    "lbl_5000mah".tr,
-                   style: theme.textTheme.titleSmall,
+                   style: theme.textTheme.titleSmall!.copyWith(color: Colors.black),
                  ),
                ],
              ),
@@ -406,7 +411,8 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
    return Container(
      width: double.maxFinite,
      padding: EdgeInsets.all(16.h),
-     decoration: AppDecoration.fillGray.copyWith(
+     decoration:BoxDecoration(
+       color: Colors.black26,
        borderRadius: BorderRadiusStyle.roundedBorder16,
      ),
      child: Column(
@@ -415,14 +421,14 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
        children: [
          SizedBox(height: 6.h),
          CustomImageView(
-           imagePath: ImageConstant.imgCalender,
+           imagePath: ImageConstant.imgFingerAccess,
            height: 32.h,
            width: 34.h,
          ),
          SizedBox(height: 10.h),
          Text(
            "lbl_device_sensors".tr,
-           style: theme.textTheme.labelLarge,
+           style: theme.textTheme.labelLarge!.copyWith(color: Colors.black),
          ),
          SizedBox(height: 2.h),
          Text(
@@ -431,6 +437,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
            overflow: TextOverflow.ellipsis,
            style: theme.textTheme.titleSmall!.copyWith(
              height: 1.40,
+             color: Colors.black
            ),
          ),
        ],
