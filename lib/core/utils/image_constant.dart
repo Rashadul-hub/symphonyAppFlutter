@@ -18,7 +18,18 @@ class ImageConstant{
   static String imgThumbsUp  = '$imagePath/img_thumbs_up.svg';
   static String imgThumbsUpErrorcontainer  = '$imagePath/img_thumbs_up_errorcontainer.svg';
 
-
+  static String imgAndroid  = '$imagePath/img_android.png';
+  static String imgDisplay  = '$imagePath/img_display.png';
+  static String imgProcessor  = '$imagePath/img_processor.png';
+  static String imgRam  = '$imagePath/img_ram.png';
+  static String imgSim  = '$imagePath/img_sim.png';
+  static String imgStorage  = '$imagePath/img_storage.png';
+  static String imgTm  = '$imagePath/img_tm.png';
+  static String imgAndroid14  = '$imagePath/img_android_14.png';
+  static String imgCamera  = '$imagePath/img_camera.png';
+  static String imgNetwork  = '$imagePath/img_network.png';
+  static String imgBattery  = '$imagePath/img_battery.png';
+  static String imgFingerAccess  = '$imagePath/img_finger_access.png';
 
   static String imgVector  = '$imagePath/img_vector.svg';
   static String imgRightArrow  = '$imagePath/img_right_arrow_png.png';

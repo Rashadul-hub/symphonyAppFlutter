@@ -15,8 +15,9 @@ class RamlListItemWidget extends StatelessWidget {
     return Container(
       width: 162.h,
       padding: EdgeInsets.all(16.h),
-      decoration: AppDecoration.fillGray.copyWith(
-        borderRadius: BorderRadiusStyle.roundedBorder16
+      decoration:BoxDecoration(
+        color: Colors.black26,
+        borderRadius: BorderRadiusStyle.roundedBorder16,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -35,8 +36,10 @@ class RamlListItemWidget extends StatelessWidget {
               children: [
                 Text(
                   ramlListItemModelObj.ram!,
-                  style: theme.textTheme.labelLarge,
-                ),
+                  style: theme.textTheme.labelLarge!.copyWith(
+                    color: Colors.black
+                  ),
+                 ),
                 CustomImageView(
                   imagePath: ramlListItemModelObj.ramTwo!,
                   height: 10.h,
@@ -55,6 +58,7 @@ class RamlListItemWidget extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.titleSmall!.copyWith(
                 height: 1.40,
+                color: Colors.black
               ),
             ),
           ),
