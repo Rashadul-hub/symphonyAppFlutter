@@ -7,12 +7,12 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
 import 'package:http/http.dart' as http;
-import 'package:symphony_app/presentation/map_provider.dart';
+import 'package:symphony_app/presentation/google_map/provider/map_provider.dart';
 
-import '../core/app_export.dart';
-import '../widgets/appbar/app_leading_image.dart';
-import '../widgets/appbar/appbar_subtitle.dart';
-import '../widgets/appbar/custom_app_bar.dart';
+import '../../core/app_export.dart';
+import '../../widgets/appbar/app_leading_image.dart';
+import '../../widgets/appbar/appbar_subtitle.dart';
+import '../../widgets/appbar/custom_app_bar.dart';
 
 class OpenstreetmapScreen extends StatefulWidget {
   const OpenstreetmapScreen({super.key});

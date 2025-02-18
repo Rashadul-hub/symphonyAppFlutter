@@ -4,7 +4,7 @@ import 'package:symphony_app/presentation/homescreen_screen/dashboard_page.dart'
 import '../presentation/app_navigation_screen/app_navigation_screen.dart';
 import '../presentation/checksupportscreen_screen/checksupportscreen_screen.dart';
 import '../presentation/homescreen_screen/homescreen_screen.dart';
-import '../presentation/maps.dart';
+import '../presentation/google_map/maps.dart';
 import '../presentation/queryscreen_screen/queryscreen_screen.dart';
 import '../presentation/specificationscreen_screen/specificationscreen_screen.dart';
 
