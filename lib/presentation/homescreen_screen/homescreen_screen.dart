@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/app_export.dart';
+import '../../routes/custom_bottom_navigation.dart';
 import '../../widgets/custom_bottom_bar.dart';
 import 'dashboard_page.dart';
 import 'provider/homescreen_provider.dart';
@@ -51,61 +52,9 @@ class _HomescreenScreenState extends State<HomescreenScreen> {
      ),
      bottomNavigationBar: SizedBox(
        width: double.maxFinite,
-       child: _buildBottomNavigation(context),
+       child:const CustomBottomNavigation(),
      ),
    );
- }
-
- /// Section Widget
- Widget _buildBottomNavigation(BuildContext context) {
-   return SizedBox(
-     width: double.maxFinite,
-     child: CustomBottomBar(
-       onChanged: (BottomBarEnum type) {
-         Navigator.pushReplacementNamed(
-             navigatorKey.currentContext!, getCurrentRoute(type)
-           // context, getCurrentRoute(type),
-
-         );
-         // if (type == BottomBarEnum.Home) {
-         //   WidgetsBinding.instance.addPostFrameCallback((_) {
-         //     navigatorKey.currentState?.popUntil(
-         //             (route) => route.settings.name == AppRoutes.dashBoardPage);
-         //     if (ModalRoute.of(navigatorKey.currentContext!)?.settings.name !=
-         //         AppRoutes.dashBoardPage) {
-         //       Navigator.pushReplacementNamed(
-         //         navigatorKey.currentContext!,
-         //         AppRoutes.dashBoardPage,
-         //       );
-         //     }
-         //   });
-         // } else {
-         //   WidgetsBinding.instance.addPostFrameCallback((_) {
-         //     Navigator.pushReplacementNamed(
-         //       navigatorKey.currentContext!,
-         //       getCurrentRoute(type),
-         //     );
-         //   });
-         // }
-
-       },
-     ),
-   );
- }
-
-
- /// Handling route based on bottom click actions
- String getCurrentRoute(BottomBarEnum type) {
-   switch (type) {
-     case BottomBarEnum.Website:
-       return "/";
-     case BottomBarEnum.Home:
-       return AppRoutes.homescreenScreen;
-     case BottomBarEnum.Social:
-       return "/";
-     default:
-       return "/";
-   }
  }
 
  /// Handling page based on route

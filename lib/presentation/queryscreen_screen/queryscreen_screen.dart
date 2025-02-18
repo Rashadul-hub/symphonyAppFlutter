@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:symphony_app/core/app_export.dart';
 import 'package:symphony_app/widgets/custom_elevated_button.dart';
 import 'package:symphony_app/widgets/custom_text_form_field.dart';
+import '../../routes/custom_bottom_navigation.dart';
 import '../../widgets/appbar/app_leading_image.dart';
 import '../../widgets/appbar/appbar_subtitle.dart';
 import '../../widgets/appbar/custom_app_bar.dart';
@@ -66,7 +67,7 @@ class _QueryscreenScreenState extends State<QueryscreenScreen> {
       ),
       bottomNavigationBar: SizedBox(
         width: double.maxFinite,
-        child: _buildBottomNavigation(context),
+        child:const CustomBottomNavigation(),
       ),
     );
   }
@@ -140,35 +141,6 @@ class _QueryscreenScreenState extends State<QueryscreenScreen> {
     );
   }
 
-
-  /// Section Widget
-  Widget _buildBottomNavigation(BuildContext context) {
-    return SizedBox(
-      width: double.maxFinite,
-      child: CustomBottomBar(
-        onChanged: (BottomBarEnum type) {
-          Navigator.pushNamed(
-            // navigatorKey.currentContext!, getCurrentRoute(type),
-            context, getCurrentRoute(type),
-          );
-        },
-      ),
-    );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Website:
-        return "/";
-      case BottomBarEnum.Home:
-        return AppRoutes.homescreenScreen;
-      case BottomBarEnum.Social:
-        return "/";
-      default:
-        return "/";
-    }
-  }
 
   /// Navigates to the previous screen.
   onTapArrowleftone(BuildContext context) {
