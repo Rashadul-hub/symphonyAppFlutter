@@ -298,11 +298,11 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     direction: Axis.horizontal,
                     spacing: 16.h,
                     children: List.generate(
-                      provider.iphone13miniFourInitialModelObj
+                      provider.dashBoardModelObj
                           .listmobilesItemList.length,
                           (index) {
                         ListmobilesItemModel model = provider
-                            .iphone13miniFourInitialModelObj
+                            .dashBoardModelObj
                             .listmobilesItemList[index];
                         return ListmobilesItemWidget(
                           model,
@@ -446,9 +446,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     direction: Axis.horizontal,
                     spacing: 16.h,
                     children: List.generate(
-                      provider.iphone13miniFourInitialModelObj.listItemList.length,
+                      provider.dashBoardModelObj.listItemList.length,
                           (index) {
-                        ListItemModel model = provider.iphone13miniFourInitialModelObj.listItemList[index];
+                        ListItemModel model = provider.dashBoardModelObj.listItemList[index];
                         return ListItemWidget(
                           model,
                         );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
+import '../../routes/custom_bottom_navigation.dart';
 import '../../widgets/appbar/app_leading_image.dart';
 import '../../widgets/appbar/appbar_subtitle.dart';
 import '../../widgets/appbar/custom_app_bar.dart';
@@ -74,7 +75,8 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
         ),
         bottomNavigationBar: SizedBox(
           width: double.maxFinite,
-          child: _buildBottomNavigation(context),
+          // child: _buildBottomNavigation(context),
+          child: const CustomBottomNavigation(),
         ),
       ),
     );
@@ -143,36 +145,6 @@ class _ChecksupportscreenScreenState extends State<ChecksupportscreenScreen> {
         },
       ),
     );
-  }
-
-
-  /// Section Widget
-  Widget _buildBottomNavigation(BuildContext context) {
-    return SizedBox(
-      width: double.maxFinite,
-      child: CustomBottomBar(
-        onChanged: (BottomBarEnum type) {
-          Navigator.pushNamed(
-            // navigatorKey.currentContext!, getCurrentRoute(type),
-            context, getCurrentRoute(type),
-          );
-        },
-      ),
-    );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Website:
-        return "/";
-      case BottomBarEnum.Home:
-        return AppRoutes.homescreenScreen;
-      case BottomBarEnum.Social:
-        return "/";
-      default:
-        return "/";
-    }
   }
 
   /// Navigates to the previous screen.

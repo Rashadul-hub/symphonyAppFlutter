@@ -6,6 +6,7 @@ import 'package:symphony_app/presentation/specificationscreen_screen/widgets/pro
 import 'package:symphony_app/presentation/specificationscreen_screen/widgets/ramlist_item_widget.dart';
 
 import '../../core/app_export.dart';
+import '../../routes/custom_bottom_navigation.dart';
 import '../../widgets/appbar/app_leading_image.dart';
 import '../../widgets/appbar/appbar_subtitle.dart';
 import '../../widgets/appbar/custom_app_bar.dart';
@@ -40,7 +41,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
    return Scaffold(
      extendBody: true,
      // extendBodyBehindAppBar: true,
-     // backgroundColor: appTheme.black900,
+     // backgroundColor: AppDecoration.gradientGrayToGray,
      appBar: _buildAppBar(context),
      body: SafeArea(
        top: false,
@@ -48,6 +49,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
          width: double.maxFinite,
          child: SingleChildScrollView(
            child: Container(
+             decoration: AppDecoration.gradientGrayToGray,
              width: double.maxFinite,
              padding: EdgeInsets.only(
                left: 16.h,
@@ -78,7 +80,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
      ),
      bottomNavigationBar: SizedBox(
        width: double.maxFinite,
-       child: _buildBottomBar(context),
+       child:const CustomBottomNavigation(),
      ),
    );
  }
@@ -101,34 +103,7 @@ class _SpecificationscreenScreenState extends State<SpecificationscreenScreen> {
      ),
    );
  }
- /// Section Widget
- Widget _buildBottomBar(BuildContext context) {
-   return SizedBox(
-     width: double.maxFinite,
-     child: CustomBottomBar(
-       onChanged: (BottomBarEnum type) {
-         Navigator.pushNamed(
-           // navigatorKey.currentContext!, getCurrentRoute(type),
-           context, getCurrentRoute(type),
-         );
-       },
-     ),
-   );
- }
 
- ///Handling route based on bottom click actions
- String getCurrentRoute(BottomBarEnum type) {
-   switch (type) {
-     case BottomBarEnum.Website:
-       return "/";
-     case BottomBarEnum.Home:
-       return AppRoutes.homescreenScreen;
-     case BottomBarEnum.Social:
-       return "/";
-     default:
-       return "/";
-   }
- }
 
 
  /// Section Widget

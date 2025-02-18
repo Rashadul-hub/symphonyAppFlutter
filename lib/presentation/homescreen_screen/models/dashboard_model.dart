@@ -3,7 +3,7 @@ import 'list_item_model.dart';
 import 'listmobiles_item_model.dart';
 
 
-class Iphone13MiniFourInitialModel{
+class DashboardModel{
   List<ListmobilesItemModel> listmobilesItemList = [
     ListmobilesItemModel(
       mobiles: "lbl_mobiles".tr,
